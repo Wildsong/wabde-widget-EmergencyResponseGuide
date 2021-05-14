@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Ghid pentru reacţii de urgenţă",
-  "ergMainPageTitle": "Pe baza Ghidului pentru reacții urgență 2016",
+  "ergMainPageTitle": "Pe baza Ghidului pentru reacții urgență 2020",
   "coordInputLabelStart": "Localizarea deversării",
   "coordInputLabel": "Localizarea deversării",
   "addPointToolTip": "Adăugați localizarea deversării",

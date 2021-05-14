@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "دليل الاستجابة للطوارئ",
-  "ergMainPageTitle": "بناءً على دليل الاستجابة للطوارئ 2016",
+  "ergMainPageTitle": "بناءً على دليل الاستجابة للطوارئ 2020",
   "coordInputLabelStart": "موقع الإخراج",
   "coordInputLabel": "موقع الإخراج",
   "addPointToolTip": "إضافة موقع الإخراج",

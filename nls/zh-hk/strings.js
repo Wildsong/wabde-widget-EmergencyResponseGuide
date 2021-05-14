@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "緊急應變指南",
-  "ergMainPageTitle": "根據緊急應變指南 2016",
+  "ergMainPageTitle": "根據緊急應變指南 2020",
   "coordInputLabelStart": "洩露位置",
   "coordInputLabel": "洩露位置",
   "addPointToolTip": "新增洩露位置",

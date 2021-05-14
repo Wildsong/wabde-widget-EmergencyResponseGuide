@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Räddningstjänstguide",
-  "ergMainPageTitle": "Baserat på Räddningstjänstguiden 2016",
+  "ergMainPageTitle": "Baserat på Emergency Response Guidebook 2020",
   "coordInputLabelStart": "Spillplats",
   "coordInputLabel": "Spillplats",
   "addPointToolTip": "Lägg till spillplats",

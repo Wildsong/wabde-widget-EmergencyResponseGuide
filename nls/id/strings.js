@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Panduan Tanggap Darurat",
-  "ergMainPageTitle": "Berdasarkan Buku Panduan Tanggapan Darurat 2016",
+  "ergMainPageTitle": "Berdasarkan Buku Panduan Tanggapan Darurat 2020",
   "coordInputLabelStart": "Lokasi Tumpahan",
   "coordInputLabel": "Lokasi Tumpahan",
   "addPointToolTip": "Tambah Lokasi Tumpahan",

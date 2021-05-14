@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "緊急時応急措置指針",
-  "ergMainPageTitle": "北米 緊急時応急措置指針 2016 に基づく",
+  "ergMainPageTitle": "北米 緊急時応急措置指針 2020 に基づく",
   "coordInputLabelStart": "流出位置",
   "coordInputLabel": "流出位置",
   "addPointToolTip": "流出位置の追加",

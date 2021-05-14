@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Příručka pro záchranné akce v nouzových situacích",
-  "ergMainPageTitle": "Na základě Příručky pro záchranné akce v nouzových situacích 2016",
+  "ergMainPageTitle": "Na základě Příručky pro záchranné akce v nouzových situacích 2020",
   "coordInputLabelStart": "Poloha znečištění",
   "coordInputLabel": "Poloha znečištění",
   "addPointToolTip": "Přidat polohu znečištění",

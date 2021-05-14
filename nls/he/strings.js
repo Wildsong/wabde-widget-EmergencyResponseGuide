@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "מדריך לצוותי חירום",
-  "ergMainPageTitle": "מבוסס על חוברת ההדרכה לצוותי חירום משנת 2016",
+  "ergMainPageTitle": "מבוסס על חוברת ההדרכה לצוותי חירום משנת 2020",
   "coordInputLabelStart": "מיקום הדליפה",
   "coordInputLabel": "מיקום הדליפה",
   "addPointToolTip": "הוסף מיקום דליפה",

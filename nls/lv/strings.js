@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Rīcības ārkārtas situācijās norādījumi",
-  "ergMainPageTitle": "Pamatojoties uz rīcības ārkārtas situācijās ceļvedi, 2016. gads",
+  "ergMainPageTitle": "Pamatojoties uz rīcības ārkārtas situācijās ceļvedi 2020 (Emergency Response Guidebook 2020)",
   "coordInputLabelStart": "Noplūdes novietojums",
   "coordInputLabel": "Noplūdes novietojums",
   "addPointToolTip": "Pievienot noplūdes novietojumu",

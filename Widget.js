@@ -143,6 +143,7 @@ define([
       _bleveZoneSym: null, //Object to hold BLEVE Zone Symbol
       _renderer: null, // renderer to be used on the ERG Feature Service
       _addLayerToMap: true, // flag to add layer to map
+      _origPlaceholderText: '', // Holds the original placeholder text
 
       postMixInProperties: function () {
         //mixin default nls with widget nls
@@ -337,6 +338,9 @@ define([
         if (nl.length > 0) {
           domStyle.set(nl[0], "width", (this.ERGAreaBySizePublishERGButton.clientWidth - 44) + "px");
         }
+
+        // Apply ellipsis to placeholder text
+        this._editPlaceholderText(this.inputControl.coordtext);
       },
 
       startup: function () {
@@ -442,6 +446,10 @@ define([
           }
         };
         $(this.materialType).easyAutocomplete(options);
+
+        // Apply ellipsis to placeholder text
+        this._origPlaceholderText = this.inputControl.coordtext.placeholder;
+        this._editPlaceholderText(this.inputControl.coordtext);
       },
 
       /**
@@ -1053,6 +1061,22 @@ define([
       },
 
       /**
+       * Check if feature layer has the supported capabilities
+       * @param {*} capabilities
+       * @returns
+       */
+      _containsSupportedCapabilities: function (capabilities) {
+        var supported = ["create", "delete", "query", "update", "editing"];
+        var isSupported = true;
+        supported.forEach(function(supCap) {
+          if (capabilities.toLowerCase().split(",").indexOf(supCap) === -1) {
+            isSupported = false;
+          }
+        });
+        return isSupported;
+      },
+
+      /**
        * Populates the drop down list of operational layers
        * from the webmap
        */
@@ -1070,7 +1094,7 @@ define([
 
         array.forEach(layerList, lang.hitch(this, function (layer) {
           if (layer.url) {
-            if (layer.type === "Feature Layer" && layer.capabilities.includes("Create,Delete,Query,Update,Editing")) {
+            if (layer.type === "Feature Layer" && this._containsSupportedCapabilities(layer.capabilities)) {
               selectNode.addOption({
                 value: layer.name,
                 label: utils.sanitizeHTML(layer.name),
@@ -1520,6 +1544,43 @@ define([
         startExtent.spatialReference = spatialRef;
 
         this.map.setExtent(startExtent);
+      },
+
+      /**
+       * Applies as ellipsis to the placeholder text
+       * if text is longer than the element width
+       * @param {*} ele
+       */
+      _editPlaceholderText: function(ele) {
+        if (ele.placeholder) {
+          // Address placeholder text for the input coordinate control
+          var inputFont = window.getComputedStyle(ele, null).getPropertyValue('font');
+          var inputText = this._origPlaceholderText;
+          var inputWidth = ele.clientWidth;
+          var editedText = inputText;
+          for (var i = 0; i < inputText.length; i++) {
+            var textWidth = this._getTextWidth(editedText, inputFont) + 45;
+            if (textWidth < inputWidth) {
+              ele.placeholder = (editedText === inputText) ? inputText : editedText + "...";
+              break;
+            }
+            editedText = editedText.slice(0, -1);
+          }
+        }
+      },
+
+      /**
+       * Returns the width of a text
+       * @param {*} text
+       * @param {*} font
+       */
+      _getTextWidth: function (text, font) {
+        // re-use canvas object for better performance
+        var canvas = this._getTextWidth.canvas || (this._getTextWidth.canvas = document.createElement("canvas"));
+        var context = canvas.getContext("2d");
+        context.font = font;
+        var metrics = context.measureText(text);
+        return metrics.width;
       },
 
       //Function to set and update first and last focus nodes

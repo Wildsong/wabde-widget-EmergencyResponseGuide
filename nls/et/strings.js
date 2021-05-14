@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Hädaolukorras reageerimise juhend",
-  "ergMainPageTitle": "Põhineb juhendil „Emergency Response Guidebook 2016“",
+  "ergMainPageTitle": "Põhineb juhendil „Emergency Response Guidebook 2020“",
   "coordInputLabelStart": "Saastumiskoht",
   "coordInputLabel": "Saastumiskoht",
   "addPointToolTip": "Lisa saastumiskoht",

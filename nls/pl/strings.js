@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Przewodnik reagowania kryzysowego",
-  "ergMainPageTitle": "Na podstawie publikacji Emergency Response Guidebook 2016",
+  "ergMainPageTitle": "Na podstawie publikacji Emergency Response Guidebook 2020",
   "coordInputLabelStart": "Lokalizacja wycieku",
   "coordInputLabel": "Lokalizacja wycieku",
   "addPointToolTip": "Dodaj lokalizację wycieku",

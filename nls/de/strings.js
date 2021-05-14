@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Emergency Response Guide",
-  "ergMainPageTitle": "Basiert auf dem Emergency Response Guidebook 2016",
+  "ergMainPageTitle": "Basiert auf dem Emergency Response Guidebook 2020",
   "coordInputLabelStart": "Kontaminationsgebiet",
   "coordInputLabel": "Kontaminationsgebiet",
   "addPointToolTip": "Kontaminationsgebiet hinzufügen",

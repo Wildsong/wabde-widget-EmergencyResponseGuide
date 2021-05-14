@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Beredskapstjenesteguide",
-  "ergMainPageTitle": "Basert på beredskapstjenestehåndboken for 2016",
+  "ergMainPageTitle": "Basert på beredskapstjenestehåndboken for 2020",
   "coordInputLabelStart": "Utslippssted",
   "coordInputLabel": "Utslippssted",
   "addPointToolTip": "Legg til utslippssted",

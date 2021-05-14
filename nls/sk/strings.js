@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Príručka k núdzovej odozve",
-  "ergMainPageTitle": "Založené na Smernici k núdzovej odozve 2016",
+  "ergMainPageTitle": "Založené na Smernici núdzovej odozvy 2020",
   "coordInputLabelStart": "Umiestnenie úniku",
   "coordInputLabel": "Umiestnenie úniku",
   "addPointToolTip": "Pridať umiestnenie úniku",

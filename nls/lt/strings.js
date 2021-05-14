@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Reagavimo į ekstremalias situacijas vadovas",
-  "ergMainPageTitle": "Sudaryta pagal 2016 m reagavimo į ekstremalias situacijas vadovą",
+  "ergMainPageTitle": "Sudaryta pagal 2020 m. reagavimo į ekstremalias situacijas vadovą",
   "coordInputLabelStart": "Išsiliejimo vieta",
   "coordInputLabel": "Išsiliejimo vieta",
   "addPointToolTip": "Pridėti išsiliejimo vietą",

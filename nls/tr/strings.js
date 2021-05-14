@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Acil Durum Yanıtlama Kılavuzu",
-  "ergMainPageTitle": "Acil Durum Yanıtlama Kılavuz Kitapçığı 2016’yı Temel Alır",
+  "ergMainPageTitle": "Acil Durum Müdahalesi Kılavuz Kitapçığı 2020’yi Temel Alır",
   "coordInputLabelStart": "Sızıntı Konumu",
   "coordInputLabel": "Sızıntı Konumu",
   "addPointToolTip": "Sızıntı Konum Ekle",

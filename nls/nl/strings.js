@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Noodhulpgids",
-  "ergMainPageTitle": "Gebaseerd op Emergency Response Guidebook 2016",
+  "ergMainPageTitle": "Gebaseerd op Emergency Response Guidebook 2020",
   "coordInputLabelStart": "Leklocatie",
   "coordInputLabel": "Leklocatie",
   "addPointToolTip": "Leklocatie toevoegen",

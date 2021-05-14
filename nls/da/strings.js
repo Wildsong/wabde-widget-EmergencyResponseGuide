@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Katastrofeberedskabsvejledning",
-  "ergMainPageTitle": "Baseret på Katastrofeberedskabsvejledning 2016",
+  "ergMainPageTitle": "Baseret på Katastrofeberedskabsvejledning 2020",
   "coordInputLabelStart": "Udslippets placering",
   "coordInputLabel": "Udslippets placering",
   "addPointToolTip": "Tilføj udslipsposition",

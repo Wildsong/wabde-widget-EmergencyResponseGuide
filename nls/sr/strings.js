@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Vodič za reakciju u hitnom slučaju",
-  "ergMainPageTitle": "Zasnovan na vodiču za reakciju u hitnom slučaju 2016",
+  "ergMainPageTitle": "Zasnovan na Uputstvu za reakciju u hitnom slučaju 2020",
   "coordInputLabelStart": "Lokacija prolivanja",
   "coordInputLabel": "Lokacija prolivanja",
   "addPointToolTip": "Dodaj lokaciju prolivanja",

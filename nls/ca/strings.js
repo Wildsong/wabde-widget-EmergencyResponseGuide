@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Guia de resposta davant d'emergències",
-  "ergMainPageTitle": "Basada en el manual de resposta davant d'emergències Emergency Response Guidebook 2016",
+  "ergMainPageTitle": "Basada en el manual de resposta davant d'emergències Emergency Response Guidebook 2020",
   "coordInputLabelStart": "Ubicació de vessament",
   "coordInputLabel": "Ubicació de vessament",
   "addPointToolTip": "Afegeix una ubicació de vessament",

@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "应急响应指南",
-  "ergMainPageTitle": "基于 2016 年应急响应指南",
+  "ergMainPageTitle": "基于 2020 年应急响应指南",
   "coordInputLabelStart": "泄漏位置",
   "coordInputLabel": "泄漏位置",
   "addPointToolTip": "添加泄漏位置",

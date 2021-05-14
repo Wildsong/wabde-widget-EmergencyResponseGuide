@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Guía de respuesta ante emergencias",
-  "ergMainPageTitle": "Según la Guía de respuesta ante emergencias 2016",
+  "ergMainPageTitle": "Según la Guía de respuesta ante emergencias 2020",
   "coordInputLabelStart": "Ubicación de vertido",
   "coordInputLabel": "Ubicación de vertido",
   "addPointToolTip": "Agregar ubicación de vertido",

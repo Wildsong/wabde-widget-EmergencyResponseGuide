@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Vodič za hitni odgovor",
-  "ergMainPageTitle": "Temelji se na Vodiču za hitni odgovor iz 2016.",
+  "ergMainPageTitle": "Temelji se na Vodiču za hitni odgovor iz 2020.",
   "coordInputLabelStart": "Lokacija izljeva",
   "coordInputLabel": "Lokacija izljeva",
   "addPointToolTip": "Dodaj lokaciju izljeva",

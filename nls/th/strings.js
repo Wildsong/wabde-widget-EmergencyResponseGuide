@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "คู่มือการตอบสนองเหตุฉุกเฉิน",
-  "ergMainPageTitle": "อิงตามคู่มือการตอบสนองเหตุฉุกเฉิน 2016",
+  "ergMainPageTitle": "อิงตามคู่มือการตอบสนองเหตุฉุกเฉิน 2020",
   "coordInputLabelStart": "ตำแหน่งการรั่วไหล",
   "coordInputLabel": "ตำแหน่งการรั่วไหล",
   "addPointToolTip": "เพิ่มตำแหน่งการรั่วไหล",

@@ -108,7 +108,8 @@
   width: 100%;
   height: 30px;
   border: 1px solid #ccc;
-  padding: 7px 0px 5px 14px;
+  padding: 7px 12px;
+  font: 400 13.3333px Arial;
 }
 
 .jimu-widget-ERG .ERGNewERGHeader {
@@ -140,6 +141,10 @@
   text-align: left;
   font-size: 12px;
   margin-top: 1px;
+}
+
+.jimu-rtl .jimu-widget-ERG .dijitTextBox .dijitInputInner {
+  text-align: right;
 }
 
 .jimu-rtl .dijitTextBox .dijitInputInner {
@@ -715,3 +720,12 @@
 }
 
 /**********End Set Coordinate Format String Popup*************/
+
+.claro .jimu-widget-ERG .dijitTextBox .dijitInputInner {
+  height: 19px !important;
+  line-height: 17px !important;
+}
+
+.jimu-rtl .jimu-widget-ERG .dijitTextBox .dijitInputInner {
+  margin-top: 1px;
+}

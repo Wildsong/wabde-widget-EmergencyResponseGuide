@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "비상 대책 가이드",
-  "ergMainPageTitle": "비상 대책 가이드 2016을 기반으로 함",
+  "ergMainPageTitle": "2020 비상 대책 가이드를 기반으로 함",
   "coordInputLabelStart": "유출 위치",
   "coordInputLabel": "유출 위치",
   "addPointToolTip": "유출 위치 추가",

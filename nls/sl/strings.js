@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Priročnik za obvladovanje nujnih primerov",
-  "ergMainPageTitle": "Na podlagi priročnika za obvladovanje nujnih primerov iz leta 2016",
+  "ergMainPageTitle": "Na podlagi priročnika za obvladovanje nujnih primerov iz leta 2020",
   "coordInputLabelStart": "Lokacija razlitja",
   "coordInputLabel": "Lokacija razlitja",
   "addPointToolTip": "Dodaj lokacijo razlitja",

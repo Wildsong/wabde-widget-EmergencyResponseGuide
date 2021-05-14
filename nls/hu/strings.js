@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Vészhelyzeti tevékenységi útmutató",
-  "ergMainPageTitle": "Az Emergency Response Guidebook 2016 kiadvány alapján",
+  "ergMainPageTitle": "Az Emergency Response Guidebook 2020 kiadvány alapján",
   "coordInputLabelStart": "Kifolyás helye",
   "coordInputLabel": "Kifolyás helye",
   "addPointToolTip": "Kifolyás helyének hozzáadása",

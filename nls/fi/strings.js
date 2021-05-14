@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Hätäkeskusopas",
-  "ergMainPageTitle": "Hätäkeskusoppaan (2016) perusteella",
+  "ergMainPageTitle": "Hätäkeskusoppaan (2020) perusteella",
   "coordInputLabelStart": "Valuman sijainti",
   "coordInputLabel": "Valuman sijainti",
   "addPointToolTip": "Lisää valuman sijainti",

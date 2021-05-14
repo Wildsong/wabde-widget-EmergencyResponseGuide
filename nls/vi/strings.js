@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Hướng dẫn Phản ứng Khẩn cấp",
-  "ergMainPageTitle": "Dựa trên Sách hướng dẫn Phản ứng Khẩn cấp 2016",
+  "ergMainPageTitle": "Dựa trên Sách hướng dẫn Ứng phó Khẩn cấp 2020",
   "coordInputLabelStart": "Vị trí Tràn",
   "coordInputLabel": "Vị trí Tràn",
   "addPointToolTip": "Thêm Vị trí Tràn",

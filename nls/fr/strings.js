@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Guide d’intervention d’urgence",
-  "ergMainPageTitle": "Basé sur le guide d’intervention d’urgence de 2016",
+  "ergMainPageTitle": "Basé sur le guide des mesures d’urgence 2020",
   "coordInputLabelStart": "Point de déversement",
   "coordInputLabel": "Point de déversement",
   "addPointToolTip": "Ajouter un point de déversement",

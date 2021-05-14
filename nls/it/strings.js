@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Guida alle emergenze",
-  "ergMainPageTitle": "Basata sulla Guida alle emergenze 2016",
+  "ergMainPageTitle": "Basata sulla Guida alle emergenze 2020",
   "coordInputLabelStart": "Posizione della perdita",
   "coordInputLabel": "Posizione della perdita",
   "addPointToolTip": "Aggiungi posizione della perdita",

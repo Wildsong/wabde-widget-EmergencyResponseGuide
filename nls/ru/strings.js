@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Руководство по действиям в условиях чрезвычайных ситуаций",
-  "ergMainPageTitle": "На основании Emergency Response Guidebook 2016",
+  "ergMainPageTitle": "На основании Emergency Response Guidebook 2020",
   "coordInputLabelStart": "Местоположение разлива",
   "coordInputLabel": "Местоположение разлива",
   "addPointToolTip": "Добавить местоположение разлива",

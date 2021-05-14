@@ -3,7 +3,7 @@
     _widgetLabel: "Emergency Response Guide", // Label of widget
 
     //ERG Main Page Panel
-    "ergMainPageTitle": "Based on Emergency Response Guidebook 2016", // Shown as title for new ERG from point panel
+    "ergMainPageTitle": "Based on Emergency Response Guidebook 2020", // Shown as title for new ERG from point panel
     "coordInputLabelStart": "Spill Location", // Shown as label for coordinate input box (DD) denotes that decimal degrees is set as the default
     "coordInputLabel": "Spill Location", // Shown as label for coordinate input box
     "addPointToolTip": "Add Spill Location", // Show as tooltip help on the draw point icon

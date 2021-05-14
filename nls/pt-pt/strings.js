@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Guia de Resposta a Emergências",
-  "ergMainPageTitle": "Baseado no Guia de Resposta a Emergências 2016",
+  "ergMainPageTitle": "Baseado no Guia de Resposta a Emergências 2020",
   "coordInputLabelStart": "Localização de Derramamento",
   "coordInputLabel": "Localização de Derramamento",
   "addPointToolTip": "Adicionar Localização de Derramamento",

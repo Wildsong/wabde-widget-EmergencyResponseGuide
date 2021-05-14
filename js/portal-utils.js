@@ -13,6 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 ///////////////////////////////////////////////////////////////////////////
+/*jshint -W030*/
+/*jshint expr:true*/
 
 define([
   'esri/request',
@@ -147,9 +149,7 @@ define([
             "description": "",
             "drawingTool": "esriFeatureEditToolPolygon",
             "prototype": {
-              "attributes": {
-                "type": ""
-              }
+              "attributes": {}
             }
           }],
           "supportedQueryFormats": "JSON",
