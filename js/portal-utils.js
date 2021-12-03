@@ -140,6 +140,18 @@ define([
               "defaultValue": null,
               "sqlType": "sqlTypeNVarchar",
               "length": 256
+            },
+            {
+              "name": "distance",
+              "type": "esriFieldTypeString",
+              "alias": "distance",
+              "actualType": "nvarchar",
+              "nullable": true,
+              "editable": true,
+              "domain": null,
+              "defaultValue": null,
+              "sqlType": "sqlTypeNVarchar",
+              "length": 256
             }
           ],
           "indexes": [],

@@ -66,6 +66,9 @@ define([
     './js/portal-utils',
     './js/WeatherInfo',
     'jimu/dijit/CheckBox',
+    'jimu/portalUtils',
+    'dojo/number',
+    'dojo/_base/kernel',
     './js/jquery.easy-autocomplete',
 
     'dijit/form/NumberTextBox',
@@ -120,7 +123,10 @@ define([
     Settings,
     portalutils,
     WeatherInfo,
-    Checkbox
+    Checkbox,
+    jimuPortalUtils,
+    dojoNumber,
+    dojoKernel
   ) {
     return declare([BaseWidget, dijitWidgetBase, dijitWidgetsInTemplate], {
       baseClass: 'jimu-widget-ERG',
@@ -144,11 +150,12 @@ define([
       _renderer: null, // renderer to be used on the ERG Feature Service
       _addLayerToMap: true, // flag to add layer to map
       _origPlaceholderText: '', // Holds the original placeholder text
+      defaultUnits: null,
 
       postMixInProperties: function () {
         //mixin default nls with widget nls
         this.nls.common = {};
-        lang.mixin(this.nls.common, window.jimuNls.common);
+        lang.mixin(this.nls.common, window.jimuNls.common, window.jimuNls.units);
       },
 
       constructor: function (args) {
@@ -181,7 +188,7 @@ define([
             return String.prototype.indexOf.apply(this, arguments) !== -1;
           };
         }
-
+        this._getDefaultUnit();
         // determine if weather URL can be reached
         if (this._weatherURL) {
           var requestURL;
@@ -249,6 +256,10 @@ define([
             }, {
               "name": "type",
               "alias": "type",
+              "type": "esriFieldTypeString"
+            }, {
+              "name": "distance",
+              "alias": "distance",
               "type": "esriFieldTypeString"
             }],
             "extent": this.map.extent
@@ -372,6 +383,36 @@ define([
           list: {
             match: {
               enabled: true
+            },
+            sort: {
+              enabled: true,
+              method: lang.hitch(this, function (aValue, bValue) {
+                var inputPhrase, a, b;
+                if (this.materialType) {
+                  //get the input phrase
+                  inputPhrase = this.materialType.value.toLowerCase();
+                  //if input is matching ID then sort based on IDNum,
+                  //else based on the index of the matched phrase in material name
+                  var aIdIndex = aValue.IDNum.toString().toLowerCase().indexOf(inputPhrase);
+                  var bIdIndex = bValue.IDNum.toString().toLowerCase().indexOf(inputPhrase);
+                  if (!isNaN(Number(inputPhrase)) && (aIdIndex !== -1 || bIdIndex !== -1)) {
+                    a = aValue.IDNum;
+                    b = bValue.IDNum;
+                  } else {
+                    a = aValue.Material.toLowerCase().indexOf(inputPhrase);
+                    b = bValue.Material.toLowerCase().indexOf(inputPhrase);
+                  }
+                  //sort logic
+                  if (a < b) {
+                    return -1;
+                  }
+                  if (a > b) {
+                    return 1;
+                  }
+                }
+
+                return 0;
+              })
             },
             onChooseEvent: lang.hitch(this, function () {
               var messagePopup;
@@ -1187,7 +1228,8 @@ define([
               this._selectedMaterial[bleveAttributeValue], 'meters');
             var bleveZoneGraphic = new Graphic(bleveZone);
             bleveZoneGraphic.setAttributes({
-              "type": this.nls.bleveSettingsLabel
+              "type": this.nls.bleveSettingsLabel,
+              "distance": this._convertValue(this._selectedMaterial[bleveAttributeValue])
             });
             features.push(bleveZoneGraphic);
           }
@@ -1198,15 +1240,14 @@ define([
               this._selectedMaterial.FIRE_ISO, 'meters');
             var fireZoneGraphic = new Graphic(fireZone);
             fireZoneGraphic.setAttributes({
-              "type": this.nls.fireSettingsLabel
+              "type": this.nls.fireSettingsLabel,
+              "distance": this._convertValue(this._selectedMaterial.FIRE_ISO)
             });
             features.push(fireZoneGraphic);
           }
 
-          if (this._selectedMaterial.IDNum === 0 ||
-            this._selectedMaterial.BLEVE) {
-            // Materials with the word Substances in their title or BLEVE
-            // values do not have any PA distances
+          if (this._selectedMaterial.BLEVE) {
+            //BLEVE values do not have any PA distances
             // warn the user to this then zoom to the II Zone
             new Message({
               message: this.nls.noPAZoneMessage
@@ -1265,11 +1306,13 @@ define([
 
             var PAAGraphic = new Graphic(protectiveActionArea);
             PAAGraphic.setAttributes({
-              "type": this.nls.downwindSettingsLabel
+              "type": this.nls.downwindSettingsLabel,
+              "distance": this._convertValue(PADistance)
             });
             var PAZoneGraphic = new Graphic(PAZoneArea);
             PAZoneGraphic.setAttributes({
-              "type": this.nls.PASettingsLabel
+              "type": this.nls.PASettingsLabel,
+              "distance": this._convertValue(PADistance)
             });
 
             features.push(PAZoneGraphic, PAAGraphic);
@@ -1278,7 +1321,8 @@ define([
           // draw the II Zone
           var IIGraphic = new Graphic(IIZone);
           IIGraphic.setAttributes({
-            "type": this.nls.IISettingsLabel
+            "type": this.nls.IISettingsLabel,
+            "distance": this._convertValue(IIDistance)
           });
           features.push(IIGraphic);
 
@@ -1286,7 +1330,8 @@ define([
           var spillLocationPoly = GeometryEngine.geodesicBuffer(spillLocation, 10, 'meters');
           var spillLocationGraphic = new Graphic(spillLocationPoly);
           spillLocationGraphic.setAttributes({
-            "type": this.nls.spillLocationLabel
+            "type": this.nls.spillLocationLabel,
+            "distance": this._convertValue(10)
           });
           features.push(spillLocationGraphic);
 
@@ -1441,7 +1486,8 @@ define([
                           var newGraphics = [];
                           array.forEach(this.ERGArea.graphics, function (g) {
                             newGraphics.push(new Graphic(g.geometry, null, {
-                              type: g.attributes.type
+                              type: g.attributes.type,
+                              distance : g.attributes.distance
                             }));
                           }, this);
                           newFeatureLayer.applyEdits(newGraphics, null, null).then(
@@ -1505,7 +1551,8 @@ define([
             var newGraphics = [];
             array.forEach(this.ERGArea.graphics, function (g) {
               newGraphics.push(new Graphic(g.geometry, null, {
-                type: g.attributes.type
+                type: g.attributes.type,
+                distance: g.attributes.distance
               }));
             }, this);
             newFeatureLayer.applyEdits(newGraphics, null, null).then(
@@ -1615,6 +1662,34 @@ define([
             focusUtils.focus(this.ERGSettingsButton);
           }
           utils.initLastFocusNode(this.domNode, this.ClearERGButton);
+        }
+      },
+
+      /**
+       * This function is used to convert distance to feet or to meter and concat with unit abbr
+       */
+      _convertValue: function (dist) {
+        var convertedValue = (this.defaultUnits === 'english') ? dojoNumber.parse(dist) * 3.28084 : dist;
+        convertedValue = dojoNumber.format(convertedValue, {
+          places: 2,
+          locale: dojoKernel.locale
+        });
+        convertedValue = (this.defaultUnits === 'english') ? convertedValue + " " + this.nls.common.feetAbbr :
+          convertedValue + " " + this.nls.common.metersAbbr;
+        return convertedValue;
+      },
+
+      /**
+       * This function is used to get default unit from user or org setting
+       */
+      _getDefaultUnit: function () {
+        var portal = jimuPortalUtils.getPortal(this.appConfig.portalUrl);
+        //Check for portal user unit settings or portal units settings whichever is available
+        //consider it as default unit
+        if (portal && portal.user && portal.user.units) {
+          this.defaultUnits = portal.user.units;
+        } else {
+          this.defaultUnits = portal.units;
         }
       }
     });
